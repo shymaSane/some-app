@@ -10,12 +10,12 @@ const Stack = createStackNavigator();
 export default class NavigationIndex extends Component {
     render() {
         return (
-            <NavigationContainer>
-        <Stack.Navigator>
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-            <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-        </Stack.Navigator>
-    </NavigationContainer>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="HomeScreen" component={HomeScreen} />
+                <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
         )
     }
 }
