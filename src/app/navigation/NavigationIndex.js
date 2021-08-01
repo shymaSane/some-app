@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
@@ -19,15 +18,3 @@ export default class NavigationIndex extends Component {
         )
     }
 }
-
-
-
-
-// const AppNavigator = createStackNavigator({
-//     Home: {
-//         screen: HomeScreen
-//     },
-//     Profile: {
-//         screen: ProfileScreen
-//     }
-// })
