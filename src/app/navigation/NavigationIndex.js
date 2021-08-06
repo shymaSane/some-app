@@ -16,7 +16,7 @@ export default class NavigationIndex extends Component {
                 name="HomeScreen" 
                 component={HomeScreen} 
                 options={{
-                    headerTitle: () => <HomeHeader />
+                    header: () => <HomeHeader />
                 }} />
                 <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
             </Stack.Navigator>
