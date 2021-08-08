@@ -8,15 +8,20 @@ const  styles = StyleSheet.create({
         backgroundColor: '#3d3f4b',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 10
+        paddingLeft: 5,
+        paddingTop: 10,
+        paddingBottom: 10
     },
     headerRightButtons: {
-        flex:1
-    },
-    headerLeftButtons:{
         flex:1,
         flexDirection:'row',
         justifyContent: 'space-evenly'
+        },
+    headerLeftButtons:{
+       flex: 1
+    },
+    headerLeftIconContainer:{
+        width: '25%'
     }
 
 })

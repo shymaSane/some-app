@@ -7,13 +7,15 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const HomeHeader = () => {
     return (
         <View>
-            <View style ={styles.header}>
-                    <View style={styles.headerRightButtons}>
-                        <TouchableOpacity>
-                            <Icon name='bars' size={25} color= "#FFFFFF" />
-                        </TouchableOpacity>
+            <View style = { styles.header }>
+                    <View style = { styles.headerLeftButtons }>
+                        <View style = { styles.headerLeftIconContainer }>  
+                            <TouchableOpacity>
+                                    <Icon name='bars' size={25} color= "#FFFFFF" />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.headerLeftButtons}>
+                    <View style = { styles.headerRightButtons }>
                         <TouchableOpacity>
                             <Icon name='search1' size={25} color= "#FFFFFF" />
                         </TouchableOpacity>

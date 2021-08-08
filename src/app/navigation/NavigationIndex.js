@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, HeaderStyleInterpolators } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import HomeHeader from './HomeHeader';
@@ -17,9 +17,6 @@ export default class NavigationIndex extends Component {
                 component={HomeScreen} 
                 options={{
                     header: () => <HomeHeader />,
-                    headerStyle: {        
-                        backgroundColor: "transparent"      
-                      }
                 }} />
                 <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
             </Stack.Navigator>
