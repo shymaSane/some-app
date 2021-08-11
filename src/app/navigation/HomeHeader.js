@@ -1,30 +1,19 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View} from 'react-native';
 import styles from '../styles/AppStyle';
-import Icon from 'react-native-vector-icons/AntDesign'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import StandardIcon from '../components/StandardIcon'
 
 const HomeHeader = () => {
     return (
         <View>
             <View style = { styles.header }>
-                    <View style = { styles.headerLeftButtons }>
-                        <View style = { styles.headerLeftIconContainer }>  
-                            <TouchableOpacity>
-                                    <Icon name='bars' size={25} color= "#FFFFFF" />
-                            </TouchableOpacity>
-                        </View>
+                <View style = { styles.headerLeftButtons }>
+                        <StandardIcon name = 'bars' size = {25} color= "#FFFFFF" />
                     </View>
                     <View style = { styles.headerRightButtons }>
-                        <TouchableOpacity>
-                            <Icon name='search1' size={25} color= "#FFFFFF" />
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Icon name='form' size={25} color= "#FFFFFF" />
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Icon name='earth' size={25} color= "#FFFFFF" />
-                        </TouchableOpacity>
+                        <StandardIcon name = 'search1' size = {25} color= "#FFFFFF" />
+                        <StandardIcon name = 'form' size = {25} color= "#FFFFFF" />
+                        <StandardIcon name = 'earth' size = {25} color= "#FFFFFF" />
                     </View>
                
             </View>

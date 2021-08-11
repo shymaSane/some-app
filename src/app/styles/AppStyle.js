@@ -20,8 +20,9 @@ const  styles = StyleSheet.create({
     headerLeftButtons:{
        flex: 1
     },
-    headerLeftIconContainer:{
-        width: '25%'
+    iconContainer:{
+        width: 25,
+        height: 25
     }
 
 })
