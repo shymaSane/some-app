@@ -6,7 +6,7 @@ import styles from '../styles/AppStyle'
 
 const StandardIcon = (props) => {
     return (
-        <View style = { styles.iconContainer }>  
+        <View style = { styles.headerIconContainer }>  
             <TouchableOpacity>
                 <Icon name = { props.name } size = { props.size } color = { props.color } />
             </TouchableOpacity>
