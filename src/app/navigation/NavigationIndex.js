@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, HeaderStyleInterpolators } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import HomeHeader from './HomeHeader';
+import MainHeader from './MainHeader';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ export default class NavigationIndex extends Component {
                 name="HomeScreen" 
                 component={HomeScreen} 
                 options={{
-                    header: () => <HomeHeader />,
+                    header: () => <MainHeader />,
                 }} />
                 <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
             </Stack.Navigator>
