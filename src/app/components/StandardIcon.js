@@ -1,17 +1,17 @@
-import React from 'react'
-import { View} from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/AntDesign'
-import styles from '../styles/AppStyle'
+import React from 'react';
+import {View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/AntDesign';
+import styles from '../styles/AppStyle';
 
 const StandardIcon = (props) => {
-    return (
-        <View style = { styles.headerIconContainer }>  
-            <TouchableOpacity>
-                <Icon name = { props.name } size = { props.size } color = { props.color } />
-            </TouchableOpacity>
-        </View>
-    )
-}
+  return (
+    <View style={styles.headerIconContainer}>
+      <TouchableOpacity>
+        <Icon name={props.name} size={props.size} color={props.color} />
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default StandardIcon;
