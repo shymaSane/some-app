@@ -1,14 +1,48 @@
-import React, {Component} from 'react';
+import React, {useEffect} from 'react';
 import {api_key} from '../assets/keys';
 import {View, StatusBar, FlatList, ActivityIndicator} from 'react-native';
-import {useSelector} from 'react-redux';
-import {stocksDataSelector} from '../redux/slice/stocksDataSlice';
+import {useSelector, useDispatch} from 'react-redux';
+import {
+  fetchStockData,
+  stocksDataSelector,
+} from '../redux/slice/stocksDataSlice';
+import HomeStocks from '../components/HomeStocks';
 
 export default function HomeScreen() {
+  const dispatch = useDispatch();
+
   //we are fetching these data from rootreducer
   const {stocksData, isLoading, hasError} = useSelector(stocksDataSelector);
-  console.log(stocksData);
-  return <View></View>;
+  // console.log(stocksData);
+
+  // dispatches thunk when component first mounts
+  useEffect(() => {
+    dispatch(fetchStockData());
+  }, [dispatch]);
+
+  return (
+    <View>
+      <StatusBar backgroundColor="#3d3f4b" />
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <FlatList
+          data={Object.keys(stocksData)}
+          renderItem={({item}) => (
+            <HomeStocks
+              logo={stocksData[item].logo.url}
+              symbole={stocksData[item].quote.symbol}
+              name={stocksData[item].quote.companyName}
+              change={stocksData[item].quote.change}
+              changePercent={stocksData[item].quote.changePercent}
+              buying={stocksData[item].quote.iexAskPrice}
+              selling={stocksData[item].quote.iexBidPrice}
+            />
+          )}
+        />
+      )}
+    </View>
+  );
 }
 
 // class HomeScreen extends Component {

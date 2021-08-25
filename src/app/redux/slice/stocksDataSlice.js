@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {api_key} from '../../assets/keys';
 
 const initialState = {
   stocksData: {},
@@ -24,21 +25,29 @@ export const stocksDataSlice = createSlice({
   },
 });
 
-//when we use selector we call the recuder name in combine reducer
+export const {
+  getStocksData,
+  getStocksDataSuccess,
+  getStocksDataFailure,
+} = stocksDataSlice.actions;
+
+//when we use selector we call the recuder name in combineReducer
 export const stocksDataSelector = (state) => state.homeStocks;
 
 export default stocksDataSlice.reducer;
 
-// // const getInitialData = (state, action) =>{
+export const fetchStockData = () => {
+  return async (dispatch) => {
+    dispatch(getStocksData());
 
-// // }
-
-// export default reducerRoot = (state = initialState, action) => {
-//   switch (action.type) {
-//     case 'GET_DATA': {
-//       return {
-//         ...state,
-//       };
-//     }
-//   }
-// };
+    try {
+      const response = await fetch(
+        `https://cloud.iexapis.com/stable/stock/market/batch?&types=quote,logo&symbols=AAPL,AMZN,NFLX,GOOG,MSFT,FLAC,FLACU,FLC,LND,LNSR,PDCO,SESN,SFBC,SRE,SRLP&token=${api_key}`,
+      );
+      const json = await response.json();
+      dispatch(getStocksDataSuccess(json));
+    } catch {
+      dispatch(getStocksDataFailure());
+    }
+  };
+};
