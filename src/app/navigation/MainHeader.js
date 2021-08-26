@@ -17,7 +17,7 @@ const MainHeader = () => {
           <StandardIcon name="earth" size={25} color="#FFFFFF" />
         </View>
       </View>
-      <SecondaryHeader />
+      {/* <SecondaryHeader /> */}
     </View>
   );
 };

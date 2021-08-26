@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import MainHeader from './MainHeader';
+import Header from './Header';
 import store from '../redux/store';
 import {Provider} from 'react-redux';
 
@@ -22,7 +22,7 @@ export default class NavigationIndex extends Component {
               name="HomeScreen"
               component={HomeScreen}
               options={{
-                header: () => <MainHeader />,
+                header: () => <Header />,
               }}
             />
             <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
