@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import styles from '../styles/AppStyle';
-import StandardIcon from '../components/StandardIcon';
+import styles from '../../styles/AppStyle';
+import StandardIcon from '../StandardIcon';
 
 const SecondaryHeader = () => {
   return (

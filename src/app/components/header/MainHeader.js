@@ -1,15 +1,27 @@
+import {
+  NavigationContainer,
+  NavigationHelpersContext,
+  useNavigation,
+} from '@react-navigation/native';
 import React from 'react';
 import {View} from 'react-native';
-import styles from '../styles/AppStyle';
-import StandardIcon from '../components/StandardIcon';
-import SecondaryHeader from './SecondaryHeader';
+import styles from '../../styles/AppStyle';
+import StandardIcon from '../StandardIcon';
 
-const MainHeader = () => {
+export default function MainHeader() {
+  const navigation = useNavigation();
+  const onOpenDrawer = () => navigation.openDrawer();
+
   return (
     <View>
       <View style={styles.mainHeader}>
         <View style={styles.mainHeaderLeftButtons}>
-          <StandardIcon name="bars" size={25} color="#FFFFFF" />
+          <StandardIcon
+            onOpenDrawer={onOpenDrawer}
+            name="bars"
+            size={25}
+            color="#FFFFFF"
+          />
         </View>
         <View style={styles.headerRightButtons}>
           <StandardIcon name="search1" size={25} color="#FFFFFF" />
@@ -17,9 +29,6 @@ const MainHeader = () => {
           <StandardIcon name="earth" size={25} color="#FFFFFF" />
         </View>
       </View>
-      {/* <SecondaryHeader /> */}
     </View>
   );
-};
-
-export default MainHeader;
+}
