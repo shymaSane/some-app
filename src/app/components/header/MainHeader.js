@@ -1,8 +1,4 @@
-import {
-  NavigationContainer,
-  NavigationHelpersContext,
-  useNavigation,
-} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View} from 'react-native';
 import styles from '../../styles/AppStyle';

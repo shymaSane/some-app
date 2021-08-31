@@ -6,7 +6,7 @@ const HomeStocks = (props) => {
     <View>
       {/* ask price buying
             bid price selling  */}
-      <Image source={{uri: `${props.logo}`}} style={{width: 50, height: 50}} />
+      <Image source={props.logo ? {uri: props.logo } : null} style={{width: 50, height: 50}} />
       <Text>{props.symbol}</Text>
       <Text>{props.name}</Text>
       <Text>{props.change}</Text>
