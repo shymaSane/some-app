@@ -7,6 +7,7 @@ import {
 } from '../redux/slice/stocksDataSlice';
 import HomeStocks from '../components/HomeStocks';
 import styles from '../styles/AppStyle';
+import Header from '../components/header/Header';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export default function HomeScreen() {
   return (
     <View>
       <StatusBar backgroundColor="#3d3f4b" />
+      <Header />
       <View style={styles.homeBanner}>
         <View>
           <Text style={styles.homeBannerSecondary}>MARKETS</Text>
