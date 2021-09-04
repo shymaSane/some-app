@@ -20,7 +20,7 @@ export default function HomeScreen() {
   useEffect(() => {
     dispatch(fetchStockData());
   }, [dispatch]);
-  console.log(stocksData);
+  
   return (
     <View>
       <StatusBar backgroundColor="#3d3f4b" />

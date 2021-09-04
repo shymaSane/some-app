@@ -5,7 +5,7 @@ import React, {Fragment, Component} from 'react';
 
 
 
-export default function Header({navigation}) {
+export default function Header() {
   return (
     <Fragment>
         <MainHeader />

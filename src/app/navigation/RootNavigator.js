@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-
+import {Image} from 'react-native';
+import {COLORS} from '../assets/colors';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import TabNavigator from './TabNavigator';
 import FilterScreen from '../screens/FilterScreen';
 import WritePostScreen from '../screens/WritePostScreen';
 import SettingsScreen from '../screens/SettingsScreen';
@@ -22,24 +21,70 @@ const navOptions = () => ({
 //i want to acess the main header from any screen except drawer
 
 ///Tab Navigator
-const TabNav = createBottomTabNavigator();
+// const TabNav = createBottomTabNavigator();
 
-export const tabNavigator = () => {
-  return (
-    <TabNav.Navigator>
-      <TabNav.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={navOptions}
-      />
-      <TabNav.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
-        options={navOptions}
-      />
-    </TabNav.Navigator>
-  );
-};
+// export const tabNavigator = ({navigation}) => {
+//   return (
+//     <TabNav.Navigator
+//       initialRouteName="HomeScreen"
+//       tabBarOptions={{
+//         showLabel: false,
+//         style: {
+//           color: COLORS.white,
+//           backgroundColor: COLORS.primary,
+//           position: 'absolute',
+//           bottom: 25,
+//           left: 20,
+//           right: 20,
+//           height: 90,
+//           borderRadius: 15,
+//           //only for android
+//           elevation: 10,
+//         },
+//       }}
+//       // screenOptions={({route}) => ({
+//       //   tabBarIcon: ({focused}) => {
+//       //     let iconName;
+
+//       //     if (route.name === 'HomeScreen') {
+//       //       iconName = focused
+//       //         ? require('../assets/images/home-dark.png')
+//       //         : require('../assets/images/home-light.png');
+//       //     } else if (route.name === 'ProfileScreen') {
+//       //       iconName = focused
+//       //         ? require('../assets/images/profile-dark.png')
+//       //         : require('../assets/images/profile-light.png');
+//       //     }
+
+//       //     return (
+//       //       <Image
+//       //         source={iconName}
+//       //         style={{width: 20, height: 20}}
+//       //         resizeMode="contain"
+//       //       />
+//       //     );
+//       //   },
+//       // })}
+//     >
+//       <TabNav.Screen name="HomeScreen" component={HomeScreen} />
+//       <TabNav.Screen
+//         name="ProfileScreen"
+//         component={ProfileScreen}
+//         options={navOptions}
+//       />
+//       <TabNav.Screen
+//         name="ProfileScreen"
+//         component={ProfileScreen}
+//         options={navOptions}
+//       />
+//       <TabNav.Screen
+//         name="ExploreScreen"
+//         component={ExploreScreen}
+//         options={navOptions}
+//       />
+//     </TabNav.Navigator>
+//   );
+// };
 
 // stack navigator:
 
@@ -50,7 +95,7 @@ export const HomeStackNavigator = () => {
     <HomeStack.Navigator>
       <HomeStack.Screen
         name="bottomHome"
-        component={tabNavigator}
+        component={TabNavigator}
         options={navOptions}
       />
       <HomeStack.Screen
